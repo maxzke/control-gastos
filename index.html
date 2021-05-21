@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gastos</title>
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"> -->
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Administrar Gastos</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home
+                        </a>
+                    <!-- </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Separated link</a>
+                        </div>
+                    </li> -->
+                </ul>
+                <!-- <form class="d-flex">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form> -->
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row mt-1">
+            <div class="col-md-12 text-center" id="contentSaldo"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-md-10 text-center bg-secondary">
+                        <span class="text-white"><strong>INGRESOS</strong></span>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-sm btn-info" data-toggle="modal"
+                            data-target="#addIngreso">Agregar</button>
+                        <!-- MODAL ADD INGRESO -->
+                        <div class="modal fade" id="addIngreso" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-info">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar Nuevo Ingreso</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label class="col-form-label col-form-label-sm mt-4" for="descripcionIngreso">
+                                                Descipción
+                                            </label>
+                                            <input class="form-control form-control-sm" type="text"
+                                                placeholder="" id="descripcionIngreso">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label col-form-label-sm mt-4" for="importeIngreso">
+                                                Monto
+                                            </label>
+                                            <input class="form-control form-control-sm" type="text"
+                                                placeholder="importe" id="importeIngreso">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-success storeIngreso">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row cart bg-white">
+                    <div class="col-md-12 fondo-tables py-1" id="contentIngresos">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 offset-2">
+                <div class="row">
+                    <div class="col-md-10 text-center bg-secondary">
+                        <span class="text-white"><strong>GASTOS</strong></span>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="button" class="btn btn-sm btn-warning" data-toggle="modal"
+                            data-target="#addEgreso">Agregar</button>
+                        <!-- MODAL ADD INGRESO -->
+                        <div class="modal fade" id="addEgreso" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header bg-warning">
+                                        <h5 class="modal-title" id="exampleModalGasto">Agregar Nuevo Gasto</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <label class="col-form-label col-form-label-sm mt-4" for="descripcionGasto">
+                                                Descipción
+                                            </label>
+                                            <input class="form-control form-control-sm" type="text"
+                                                placeholder="" id="descripcionGasto">
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-form-label col-form-label-sm mt-4" for="importeGasto">
+                                                Monto
+                                            </label>
+                                            <input class="form-control form-control-sm" type="text"
+                                                placeholder="importe" id="importeGasto">
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-success storeGasto">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row cart bg-white">
+                    <div class="col-md-12 fondo-tables py-1" id="contentGasto">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+        <script src="assets/js/app.js"></script>
+</body>
+
+</html>
